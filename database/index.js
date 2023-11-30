@@ -1,10 +1,10 @@
-const sequelize = require('sequelize')
+const sequelize = require('sequelize');
 
-const connection = new sequelize.Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
+const db = new sequelize.Sequelize('railway', 'root', '5-hd4f-EG22DFe15G43H12GfC-A4De4F', {
+    host: 'viaduct.proxy.rlwy.net',
     dialect: 'mysql',
     logging: false,
-    port: process.env.DB_PORT
+    port: 22635
 })
 
-module.exports = connection
+module.exports = db

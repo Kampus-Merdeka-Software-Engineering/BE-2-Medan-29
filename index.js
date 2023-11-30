@@ -1,4 +1,4 @@
-const connection = require('./database/index')
+const db = require('./database/index')
 const express = require('express');
 const dotenv = require('dotenv').config
 const cors = require('cors');
@@ -14,6 +14,13 @@ app.use("/api/v1/posts", postRouter);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-});
+db.sync({alter: true})
+    .then(() => {
+        console.log("Database connection established");
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}.`);
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    })
