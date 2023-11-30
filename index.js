@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 db.sync({alter: true})
     .then(() => {
         console.log("Database connection established");
-        app.listen(PORT, () => {
+        app.listen(PORT, "0.0.0.0", () => {
             console.log(`Server is running on port ${PORT}.`);
         });
     })
