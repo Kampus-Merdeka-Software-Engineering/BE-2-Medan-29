@@ -2,10 +2,21 @@ const pool = require("../database/index");
 const postController = {
     findAll:async (req, res) => {
         try {
-            const [rows, fields] = await pool.query('SELECT * FROM berita')
-            res.json({
-                data: rows
-            })
+            if(req.query.category){
+                const [rows, fields] = await pool.query('SELECT * FROM berita WHERE kategori_id = ' + req.query.category)
+                res.json({
+                    data: rows
+                })
+                return;
+
+            }
+            else{
+                const [rows, fields] = await pool.query('SELECT * FROM berita')
+                res.json({
+                    data: rows
+                })
+            }
+           
         } catch (error) {
             console.log(error)
         }
