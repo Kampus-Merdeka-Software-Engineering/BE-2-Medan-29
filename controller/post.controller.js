@@ -4,16 +4,7 @@ const postController = {
         try {
             const [rows, fields] = await pool.query('SELECT * FROM berita')
             res.json({
-                data: {
-                    id:rows.id,
-                    judul:rows.judul_berita,
-                    foto: rows.foto-berita,
-                    deskripsiFoto: rows.deskripsi-foto-berita,
-                    deskripsi: rows.deskripsi-berita,
-                    penulis: rows.pembuat-berita,
-                    tanggal: rows.tanggal-pembuatan-berita, 
-                    idKategori: rows.kategori_id,
-                }
+                data: rows
             })
         } catch (error) {
             console.log(error)
