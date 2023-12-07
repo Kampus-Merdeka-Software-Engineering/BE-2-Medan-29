@@ -1,10 +1,12 @@
-const sequelize = require('sequelize');
+const mysql = require('mysql2');
+require('dotenv').config();
 
-const db = new sequelize.Sequelize('railway', 'root', '5-hd4f-EG22DFe15G43H12GfC-A4De4F', {
-    host: 'viaduct.proxy.rlwy.net',
-    dialect: 'mysql',
-    logging: false,
-    port: 22635
-})
+const pool = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port:process.env.DB_PORT,
+});
 
 module.exports = db
