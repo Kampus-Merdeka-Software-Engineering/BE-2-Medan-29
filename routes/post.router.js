@@ -9,6 +9,6 @@ router.get('/:id', postController.getById);
 router.post('/', postController.create);
 router.put('/:id', postController.update);
 router.delete('/:id', postController.delete);
-router.post('/', emailController.sendEmail);
+router.post('/subscribe', emailController.subscribeToNewsletter);
 
 module.exports = router;
