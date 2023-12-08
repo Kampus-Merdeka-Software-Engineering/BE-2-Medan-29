@@ -5,14 +5,12 @@ const app = express();
 require('dotenv').config();
 
 const postRouter = require('./routes/post.router');
-const emailRouter = require('./routes/email.router');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/v1/posts", postRouter);
-app.use("/api/v1/emails", emailRouter);
 
 const PORT = process.env.PORT || 3000;
 
