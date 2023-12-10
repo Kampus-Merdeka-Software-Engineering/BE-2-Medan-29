@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 09, 2023 at 06:47 PM
+-- Generation Time: Dec 10, 2023 at 04:53 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -102,14 +102,20 @@ INSERT INTO `kategori` (`id`, `Kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user-berita`
+-- Table structure for table `user_berita`
 --
 
-CREATE TABLE `user-berita` (
-  `email-user` varchar(30) NOT NULL,
-  `status` varchar(30) NOT NULL,
+CREATE TABLE `user_berita` (
+  `email_user` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user_berita`
+--
+
+INSERT INTO `user_berita` (`email_user`, `id`) VALUES
+('erickkalumata105@student.unsrat.ac.id', 1);
 
 --
 -- Indexes for dumped tables
@@ -129,9 +135,9 @@ ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user-berita`
+-- Indexes for table `user_berita`
 --
-ALTER TABLE `user-berita`
+ALTER TABLE `user_berita`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -142,7 +148,7 @@ ALTER TABLE `user-berita`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -151,10 +157,10 @@ ALTER TABLE `kategori`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `user-berita`
+-- AUTO_INCREMENT for table `user_berita`
 --
-ALTER TABLE `user-berita`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `user_berita`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
