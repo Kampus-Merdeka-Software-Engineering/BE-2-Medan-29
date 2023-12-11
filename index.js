@@ -8,7 +8,11 @@ const postRouter = require('./routes/post.router');
 const emailRouter = require('./routes/email.router');
 
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+  }
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/v1/posts", postRouter);
